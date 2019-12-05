@@ -1,0 +1,61 @@
+<<widget "ShipGuardLVL">><<silently>>
+   <<if $player lte 10>>
+      <<set $shipguardlvl to $playerlvl>>
+   <<else>>
+      <<set $shipguardlvl = random(1,10)>>
+   <</if>>
+<</silently>><</widget>>
+
+<<widget "ShipGuardStats">><<silently>>
+   <<if $shipguardlvl is 1>>
+      <<set $shipguardhp = random(50,150)>>
+	  <<set $shipguardstr = random(5,20)>>
+	  <<set $shipguarddef to 5>>
+      <<set $shipguarddex = random(5,20)>>
+   <<elseif $shipguardlvl is 2>>
+      <<set $shipguardhp = random(50,160)>>
+	  <<set $shipguardstr = random(5,21)>>
+	  <<set $townguarddef to 5>>
+	  <<set $shipguarddex = random(5,21)>>
+   <<elseif $shipguardlvl is 3>>
+	  <<set $shipguardhp = random(50,170)>>
+	  <<set $shipguardstr = random(5,22)>>
+	  <<set $shipguarddef = random(5,6)>>
+	  <<set $shipguarddex = random(5,22)>>
+   <<elseif $shipguardlvl is 4>>
+	  <<set $shipguardhp = random(50,180)>>
+	  <<set $shipguardstr = random(5,23)>>
+	  <<set $shipguarddef = random(5,6)>>
+	  <<set $shipguarddex = random(5,23)>>
+   <<elseif $shipguardlvl is 5>>
+	  <<set $shipguardhp = random(50,190)>>
+	  <<set $shipguardstr = random(5,24)>>
+	  <<set $shipguarddef = random(5,7)>>
+	  <<set $shipguarddex = random(5,24)>>
+   <<elseif $shipguardlvl is 6>>
+	  <<set $shipguardhp = random(50,200)>>
+	  <<set $shipguardstr = random(5,25)>>
+	  <<set $shipguarddef = random(5,7)>>
+	  <<set $shipguarddex = random(5,25)>>
+   <<elseif $shipguardlvl is 7>>
+	  <<set $shipguardhp = random(50,210)>>
+	  <<set $shipguardstr = random(5,26)>>
+	  <<set $shipguarddef = random(5,8)>>
+	  <<set $shipguarddex = random(5,26)>>
+   <<elseif $shipguardlvl is 8>>
+	  <<set $shipguardhp = random(50,220)>>
+	  <<set $shipguardstr = random(5,27)>>
+	  <<set $shipguarddef = random(5,8)>>
+	  <<set $shipguarddex = random(5,27)>>
+   <<elseif $shipguardlvl is 9>>
+	  <<set $shipguardhp = random(50,230)>>
+	  <<set $shipguardstr = random(5,28)>>
+	  <<set $shipguarddef = random(5,9)>>
+	  <<set $shipguarddex = random(5,28)>>
+   <<elseif $shipguardlvl is 10>>
+	  <<set $shipguardhp = random(50,240)>>
+	  <<set $shipguardstr = random(5,29)>>
+	  <<set $shipguarddef = random(5,9)>>
+	  <<set $shipguarddex = random(5,29)>>
+   <</if>>
+<</silently>><</widget>>
