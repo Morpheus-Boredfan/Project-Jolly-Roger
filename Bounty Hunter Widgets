@@ -1,0 +1,101 @@
+<<widget "BountyHunterLVL">><<silently>>
+    <<if $playerbounty lt 1000>>
+        <<set $bountyhunterlvl to 1>>
+    <<elseif $playerbounty gte 1000 and lt 2500>>
+        <<set $bountyhunterlvl =random(1, 2)>>
+    <<elseif $playerbounty gte 2500 and lt 5000>>
+        <<set $bountyhunterlvl =random(1, 3)>>
+    <<elseif $playerbounty gte 5000 and lt 7500>>
+        <<set $bountyhunterlvl =random(1, 3)>>
+    <<elseif $playerbounty gte 7500 and lt 7500>>
+        <<set $bountyhunterlvl =random(1, 5)>>
+    <<elseif $playerbounty gte 10000 and lt 12500>>
+        <<set $bountyhunterlvl =random(1, 6)>>
+    <<elseif $playerbounty gte 12500 and lt 15000>>
+        <<set $bountyhunterlvl =random(1, 7)>>
+    <<elseif $playerbounty gte 15000 and lt 17500>>
+        <<set $bountyhunterlvl =random(1, 8)>>
+    <<elseif $playerbounty gte 17500 and lt 20000>>
+        <<set $bountyhunterlvl =random(1, 9)>>
+    <<elseif $playerbounty gte 20000 and lt 22500>>
+        <<set $bountyhunterlvl =random(1, 10)>>
+    <<elseif $playerbounty gte 22500 and lt 25000>>
+        <<set $bountyhunterlvl =random(1, 11)>>
+    <<elseif $playerbounty gte 25000 and lt 27500>>
+        <<set $bountyhunterlvl =random(1, 12)>>
+    <<elseif $playerbounty gte 27500 and lt 30000>>
+        <<set $bountyhunterlvl =random(1, 13)>>
+    <<elseif $playerbounty gte 30000 and lt 32500>>
+        <<set $bountyhunterlvl =random(1, 14)>>
+    <<elseif $playerbounty gte 32500 and lt 35000>>
+        <<set $bountyhunterlvl =random(1, 15)>>
+    <<elseif $playerbounty gte 35000 and lt 37500>>
+        <<set $bountyhunterlvl =random(1, 16)>>
+    <<elseif $playerbounty gte 37500 and lt 40000>>
+        <<set $bountyhunterlvl =random(1, 17)>>
+    <<elseif $playerbounty gte 40000 and lt 42500>>
+        <<set $bountyhunterlvl =random(1, 18)>>
+    <<elseif $playerbounty gte 42500 and lt 45000>>
+        <<set $bountyhunterlvl =random(1, 19)>>
+    <<elseif $playerbounty gte 45000 and lt 47500>>
+        <<set $bountyhunterlvl =random(1, 20)>>
+    <<elseif $playerbounty gte 47500 and lt 50000>>
+        <<set $bountyhunterlvl =random(1, 21)>>
+    <<elseif $playerbounty gte 50000>>
+        <<set $bountyhunterlvl =random(1, 21)>>
+    <</if>>
+<</silently>><</widget>>
+
+<<widget "BountyHunterStats">><<silently>>
+   <<if $bountyhunterlvl is 1>>
+      <<set $bountyhunterhp = random(50,150)>>
+	  <<set $bountyhunterstr = random(5,20)>>
+	  <<set $bountyhunterdef to 5>>
+      <<set $bountyhunterdex = random(5,20)>>
+   <<elseif $bountyhunterlvl is 2>>
+      <<set $bountyhunterhp = random(50,160)>>
+	  <<set $bountyhunterstr = random(5,21)>>
+	  <<set $townguarddef to 5>>
+	  <<set $bountyhunterdex = random(5,21)>>
+   <<elseif $bountyhunterlvl is 3>>
+	  <<set $bountyhunterhp = random(50,170)>>
+	  <<set $bountyhunterstr = random(5,22)>>
+	  <<set $bountyhunterdef = random(5,6)>>
+	  <<set $bountyhunterdex = random(5,22)>>
+   <<elseif $bountyhunterlvl is 4>>
+	  <<set $bountyhunterhp = random(50,180)>>
+	  <<set $bountyhunterstr = random(5,23)>>
+	  <<set $bountyhunterdef = random(5,6)>>
+	  <<set $bountyhunterdex = random(5,23)>>
+   <<elseif $bountyhunterlvl is 5>>
+	  <<set $bountyhunterhp = random(50,190)>>
+	  <<set $bountyhunterstr = random(5,24)>>
+	  <<set $bountyhunterdef = random(5,7)>>
+	  <<set $bountyhunterdex = random(5,24)>>
+   <<elseif $bountyhunterlvl is 6>>
+	  <<set $bountyhunterhp = random(50,200)>>
+	  <<set $bountyhunterstr = random(5,25)>>
+	  <<set $bountyhunterdef = random(5,7)>>
+	  <<set $bountyhunterdex = random(5,25)>>
+   <<elseif $bountyhunterlvl is 7>>
+	  <<set $bountyhunterhp = random(50,210)>>
+	  <<set $bountyhunterstr = random(5,26)>>
+	  <<set $bountyhunterdef = random(5,8)>>
+	  <<set $bountyhunterdex = random(5,26)>>
+   <<elseif $bountyhunterlvl is 8>>
+	  <<set $bountyhunterhp = random(50,220)>>
+	  <<set $bountyhunterstr = random(5,27)>>
+	  <<set $bountyhunterdef = random(5,8)>>
+	  <<set $bountyhunterdex = random(5,27)>>
+   <<elseif $bountyhunterlvl is 9>>
+	  <<set $bountyhunterhp = random(50,230)>>
+	  <<set $bountyhunterstr = random(5,28)>>
+	  <<set $bountyhunterdef = random(5,9)>>
+	  <<set $bountyhunterdex = random(5,28)>>
+   <<elseif $bountyhunterlvl is 10>>
+	  <<set $bountyhunterhp = random(50,240)>>
+	  <<set $bountyhunterstr = random(5,29)>>
+	  <<set $bountyhunterdef = random(5,9)>>
+	  <<set $bountyhunterdex = random(5,29)>>
+   <</if>>
+<</silently>><</widget>>
