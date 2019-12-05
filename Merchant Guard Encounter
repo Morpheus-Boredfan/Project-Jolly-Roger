@@ -1,0 +1,13 @@
+<<CombatMerchantShipGuards>><<PlayerHealth>>
+<<set $shipguardhp to Math.clamp($shipguardhp, 0, 10000)>>
+Player HP: $playerhp
+Ship Guards HP: $shipguardhp
+
+<<nobr>><<if $playerhp gt 0 and $shipguardhp gt 0>>
+ <<if $playerdex gt $shipguarddex>><<print either("<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 2>> <</link>>","<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 3>><</link>>")>>
+  <<elseif $playerdex eq $shipguarddex>><<print either("<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 2>><</link>>","<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 3>><</link>>")>>
+  <<elseif $playerdex lt $shipguarddex>><<print either("<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 2>><</link>>","<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 3>><</link>>","<<link [[Attack|Merchant shipguard Encounter: Guards Fight]]>><<set $hit to 3>><</link>>")>>
+  <</if>>
+ <<elseif $playerhp gt 0 and $shipguardhp lte 0>>[[Next|City Encounter: Guards After Fight]]
+  <<elseif $playerhp lte 0>><<goto "Merchant shipguard Game Over">><</if>><</nobr>>
+ <<if $playerhp gt 0 and $shipguardguardhp gt 0>>[[Run Away|Sailing]]<</if>><<set $townguardhp to Math.clamp($townguardhp, 0, 10000)>>
