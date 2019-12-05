@@ -1,0 +1,36 @@
+<<widget "TownGuardLVL">><<silently>>
+   <<if $player lte 5>>
+      <<set $townguardlvl to $playerlvl>>
+   <<else>>
+      <<set $townguardlvl = random(1,5)>>
+   <</if>>
+<</silently>><</widget>>
+
+<<widget "TownGuardStats">><<silently>>
+   <<if $townguardlvl is 1>>
+      <<set $townguardhp = random(50,150)>>
+	  <<set $townguardstr = random(5,20)>>
+	  <<set $townguarddef = random(0,5)>>
+      <<set $townguarddex = random(5,20)>>
+   <<elseif $townguardlvl is 2>>
+      <<set $townguardhp = random(50,160)>>
+	  <<set $townguardstr = random(5,21)>>
+	  <<set $townguarddef = random(0,5)>>
+	  <<set $townguarddex = random(5,21)>>
+   <<elseif $townguardlvl is 3>>
+	  <<set $townguardhp = random(50,170)>>
+	  <<set $townguardstr = random(5,22)>>
+	  <<set $townguarddef = random(0,6)>>
+	  <<set $townguarddex = random(5,22)>>
+   <<elseif $townguardlvl is 4>>
+	  <<set $townguardhp = random(50,180)>>
+	  <<set $townguardstr = random(5,23)>>
+	  <<set $townguarddef = random(0,6)>>
+	  <<set $townguarddex = random(5,23)>>
+   <<elseif $townguardlvl is 5>>
+	  <<set $townguardhp = random(50,190)>>
+	  <<set $townguardstr = random(5,24)>>
+	  <<set $townguarddef = random(0,7)>>
+	  <<set $townguarddex = random(5,24)>>
+   <</if>>
+<</silently>><</widget>>
