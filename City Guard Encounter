@@ -1,0 +1,13 @@
+<<CombatCityGuards>><<PlayerHealth>>
+<<set $cityguardhp to Math.clamp($cityguardhp, 0, 10000)>>
+Player HP: $playerhp
+City Guard HP: $cityguardhp
+
+<<nobr>><<if $playerhp gt 0 and $cityguardhp gt 0>>
+ <<if $playerdex gt $cityguarddex>><<print either("<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 2>> <</link>>","<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 3>><</link>>")>>
+  <<elseif $playerdex eq $cityguarddex>><<print either("<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 2>><</link>>","<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 3>><</link>>")>>
+  <<elseif $playerdex lt $cityguarddex>><<print either("<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 2>><</link>>","<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 3>><</link>>","<<link [[Attack|City Encounter: Guards Fight]]>><<set $hit to 3>><</link>>")>>
+  <</if>>
+ <<elseif $playerhp gt 0 and $cityguardhp lte 0>>[[Next|City Encounter: Guards After Fight]]
+  <<elseif $playerhp lte 0>><<goto "City Game Over">><</if>><</nobr>>
+ <<if $playerhp gt 0 and $cityguardhp gt 0>>[[Run Away|Sailing]]<</if>>
