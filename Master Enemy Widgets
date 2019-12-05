@@ -1,0 +1,19 @@
+<<widget "TownGuard">><<silently>>
+   <<TownGuardLVL>>
+   <<TownGuardStats>>
+<</silently>><</widget>>
+
+<<widget "CityGuard">><<silently>>
+   <<CityGuardLVL>>
+   <<CityGuardStats>>
+<</silently>><</widget>>
+
+<<widget "BountyHunter">><<silently>>
+   <<BountyHunterLVL>>
+   <<BountyHunterStats>>
+<</silently>><</widget>>
+
+<<widget "ShipGuard">><<silently>>
+   <<ShipGuardLVL>>
+   <<ShipGuardStats>>
+<</silently>><</widget>>
