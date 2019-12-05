@@ -1,0 +1,61 @@
+<<widget "CityGuardLVL">><<silently>>
+   <<if $player lte 10>>
+      <<set $cityguardlvl to $playerlvl>>
+   <<else>>
+      <<set $cityguardlvl = random(1,10)>>
+   <</if>>
+<</silently>><</widget>>
+
+<<widget "CityGuardStats">><<silently>>
+   <<if $cityguardlvl is 1>>
+      <<set $cityguardhp = random(50,150)>>
+	  <<set $cityguardstr = random(5,20)>>
+	  <<set $cityguarddef to 5>>
+      <<set $cityguarddex = random(5,20)>>
+   <<elseif $cityguardlvl is 2>>
+      <<set $cityguardhp = random(50,160)>>
+	  <<set $cityguardstr = random(5,21)>>
+	  <<set $townguarddef to 5>>
+	  <<set $cityguarddex = random(5,21)>>
+   <<elseif $cityguardlvl is 3>>
+	  <<set $cityguardhp = random(50,170)>>
+	  <<set $cityguardstr = random(5,22)>>
+	  <<set $cityguarddef = random(5,6)>>
+	  <<set $cityguarddex = random(5,22)>>
+   <<elseif $cityguardlvl is 4>>
+	  <<set $cityguardhp = random(50,180)>>
+	  <<set $cityguardstr = random(5,23)>>
+	  <<set $cityguarddef = random(5,6)>>
+	  <<set $cityguarddex = random(5,23)>>
+   <<elseif $cityguardlvl is 5>>
+	  <<set $cityguardhp = random(50,190)>>
+	  <<set $cityguardstr = random(5,24)>>
+	  <<set $cityguarddef = random(5,7)>>
+	  <<set $cityguarddex = random(5,24)>>
+   <<elseif $cityguardlvl is 6>>
+	  <<set $cityguardhp = random(50,200)>>
+	  <<set $cityguardstr = random(5,25)>>
+	  <<set $cityguarddef = random(5,7)>>
+	  <<set $cityguarddex = random(5,25)>>
+   <<elseif $cityguardlvl is 7>>
+	  <<set $cityguardhp = random(50,210)>>
+	  <<set $cityguardstr = random(5,26)>>
+	  <<set $cityguarddef = random(5,8)>>
+	  <<set $cityguarddex = random(5,26)>>
+   <<elseif $cityguardlvl is 8>>
+	  <<set $cityguardhp = random(50,220)>>
+	  <<set $cityguardstr = random(5,27)>>
+	  <<set $cityguarddef = random(5,8)>>
+	  <<set $cityguarddex = random(5,27)>>
+   <<elseif $cityguardlvl is 9>>
+	  <<set $cityguardhp = random(50,230)>>
+	  <<set $cityguardstr = random(5,28)>>
+	  <<set $cityguarddef = random(5,9)>>
+	  <<set $cityguarddex = random(5,28)>>
+   <<elseif $cityguardlvl is 10>>
+	  <<set $cityguardhp = random(50,240)>>
+	  <<set $cityguardstr = random(5,29)>>
+	  <<set $cityguarddef = random(5,9)>>
+	  <<set $cityguarddex = random(5,29)>>
+   <</if>>
+<</silently>><</widget>>
