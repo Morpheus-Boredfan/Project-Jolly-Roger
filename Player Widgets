@@ -1,0 +1,151 @@
+<<widget "PlayerHealth">><<silently>>
+<<if $playerlvl is 1>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 100)>>
+<<elseif $playerlvl is 2>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 110)>>
+<<elseif $playerlvl is 3>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 120)>>
+<<elseif $playerlvl is 4>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 130)>>
+<<elseif $playerlvl is 5>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 140)>>
+<<elseif $playerlvl is 6>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 150)>>
+<<elseif $playerlvl is 7>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 160)>>
+<<elseif $playerlvl is 8>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 170)>>
+<<elseif $playerlvl is 9>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 180)>>
+<<elseif $playerlvl is 10>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 190)>>
+<<elseif $playerlvl is 11>>
+    <<set $playerhp to Math.clamp($playerhp, 0, 200)>>
+<</if>>
+<</silently>><</widget>>
+
+<<widget "XPBountyHunter">><<silently>>
+  <<if $playerlvl gt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=15>>
+    <<elseif $playerlvl eq $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=20>>
+    <<elseif $playerlvl lt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=25>><</if>>
+<</silently>><</widget>>
+
+<<widget "XPTownGuards">><<silently>>
+  <<if $playerlvl gt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=20>>
+    <<elseif $playerlvl eq $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=25>>
+    <<elseif $playerlvl lt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=30>><</if>>
+<</silently>><</widget>>
+
+<<widget "XPCityGuards">><<silently>>
+  <<if $playerlvl gt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=25>>
+    <<elseif $playerlvl eq $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=30>>
+    <<elseif $playerlvl lt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=35>><</if>>
+<</silently>><</widget>>
+
+<<widget "XPShipGuards">><<silently>>
+  <<if $playerlvl gt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=30>>
+    <<elseif $playerlvl eq $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=35>>
+    <<elseif $playerlvl lt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=40>><</if>>
+<</silently>><</widget>>
+
+<<widget "XPNavySoldiers">><<silently>>
+  <<if $playerlvl gt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=30>>
+    <<elseif $playerlvl eq $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=35>>
+    <<elseif $playerlvl lt $enemylvl and $playerlvl lt 11>>
+      <<set $xptonextlvl -=40>><</if>>
+<</silently>><</widget>>
+
+<<widget "Leveling">><<silently>>
+    <<if $playerlvl is 1 and $xptonextlvl lte 0>>
+	   <<set $playerlvl +=1>>
+	   <<set $xptonextlvl to 360>>
+	<<elseif $playerlvl is 2 and $xptonextlvl lte 0>>
+	   <<set $playerlvl +=1>>
+	   <<set $xptonextlvl to 480>>
+	<<elseif $playerlvl is 3 and $xptonextlv lte 0>>
+	   <<set $playerlvl +=1>>
+	   <<set $xptonextlvl to 640>>
+	<<elseif $playerlvl is 4 and $xptonextlv lte 0>>
+	   <<set $playerlvl +=1>>
+	   <<set $xptonextlvl to 800>>
+    <<elseif $playerlvl is 5 and $xptonextlv lte 0>>
+	   <<set $playerlvl +=1>>
+	   <<set $xptonextlvl to 960>>
+    <<elseif $playerlVl is 6 and $xptonextlv lte 0>>
+	  <<set $xptonextlvl to 1120>>
+	   <<set $playerlvl +=1>>
+    <<elseif $playerlvl is 7 and $xptonextlv lte 0>>
+	   <<set $xptonextlvl to 1280>>
+	   <<set $playerlvl +=1>>
+    <<elseif $playerlvl is 8 and $xptonextlv lte 0>>
+	   <<set $xptonextlvl to 14400>>
+	   <<set $playerlvl +=1>>
+    <<elseif $playerlvl is 9 and $xptonextlv lte 0>>
+	   <<set $playerlvl +=1>>
+	   <<set $xptonextlvl to 1600>>
+	<<elseif $playerlvl is 10 and $xptonextlv lte 0>>
+	   <<set $playerlvl to "11 (The Prototype's Max)">>
+	   <<set $xptonextlvl to 1760000>>
+  <</if>>
+<</silently>><</widget>>
+
+<<widget "ResetPlayerHealth">><<silently>>
+   <<if $playerlvl is 1>><<set $playerhp to 100>><</if>>
+   <<if $playerlvl is 2>><<set $playerhp to 110>><</if>>
+   <<if $playerlvl is 3>><<set $playerhp to 120>><</if>>
+   <<if $playerlvl is 4>><<set $playerhp to 130>><</if>>
+   <<if $playerlvl is 5>><<set $playerhp to 140>><</if>>
+   <<if $playerlvl is 6>><<set $playerhp to 150>><</if>>
+   <<if $playerlvl is 7>><<set $playerhp to 160>><</if>>
+   <<if $playerlvl is 8>><<set $playerhp to 170>><</if>>
+   <<if $playerlvl is 9>><<set $playerhp to 180>><</if>>
+   <<if $playerlvl is 10>><<set $playerhp to 190>><</if>>
+   <<if $playerlvl is 11>><<set $playerhp to 200>><</if>>
+<</silently>><</widget>>
+
+<<widget "StatsIncrease">><<silently>>
+   <<if $playerlvl is 2>>
+      <<set $playerstr to 11>>
+      <<set $playerdex to 11>>
+   <<elseif $playerlvl is 3>>
+      <<set $playerstr to 12>>
+      <<set $playerdex to 12>>
+   <<elseif $playerlvl is 4>>
+      <<set $playerstr to 13>>
+      <<set $playerdex to 13>>
+   <<elseif $playerlvl is 5>>
+      <<set $playerstr to 14>>
+      <<set $playerdex to 14>>
+   <<elseif $playerlvl is 6>>
+      <<set $playerstr to 15>>
+      <<set $playerdex to 15>>
+   <<elseif $playerlvl is 7>>
+      <<set $playerstr to 16>>
+      <<set $playerdex to 16>>
+   <<elseif $playerlvl is 8>>
+      <<set $playerstr to 17>>
+      <<set $playerdex to 17>>
+   <<elseif $playerlvl is 9>>
+      <<set $playerstr to 18>>
+      <<set $playerdex to 18>>
+   <<elseif $playerlvl is 10>>
+      <<set $playerstr to 19>>
+      <<set $playerdex to 19>>
+   <<elseif $playerlvl is 11>>
+      <<set $playerstr to 20>>
+      <<set $playerdex to 20>>
+<</silently>><</widget>>
