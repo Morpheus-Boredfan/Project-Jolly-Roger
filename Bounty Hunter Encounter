@@ -1,0 +1,13 @@
+<<CombatBountyHunter>><<PlayerHealth>>
+<<set $bountyhunterhp to Math.clamp($bountyhunterhp, 0, 10000)>>
+Player HP: $playerhp
+The Bounty Hunter's HP: $bountyhunterhp
+
+<<nobr>><<if $playerhp gt 0 and $bountyhunterhp gt 0>>
+ <<if $playerdex gt $bountyhunterdex>><<print either("<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 2>> <</link>>","<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 3>><</link>>")>>
+  <<elseif $playerdex eq $bountyhunterdex>><<print either("<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 2>><</link>>","<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 3>><</link>>")>>
+  <<elseif $playerdex lt $bountyhunterdex>><<print either("<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 1>><</link>>","<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 2>><</link>>","<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 3>><</link>>","<<link [[Attack|Village Bounty Hunter Fight]]>><<set $hit to 3>><</link>>")>>
+  <</if>>
+ <<elseif $playerhp gt 0 and $bountyhunterhp lte 0>>[[Next|Village Bounty Hunter After Fight]]
+ <<elseif $playerhp lte 0>><<goto "Bounty Hunter Game Over">><</if>><</nobr>>
+ <<if $playerhp gt 0 and $bountyhunterhp gt 0>>[[Run Away|Sailing]]<</if>>
