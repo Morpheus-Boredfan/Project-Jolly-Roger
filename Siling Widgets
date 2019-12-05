@@ -1,0 +1,52 @@
+<<widget "Sailing1">>
+<<nobr>>Laying on your bed within the captain's quarters, you stare at the ceiling as you let your imagination run wild with the possibilities of what you will find on your next raid. At first, your mind chaotically cycles between what treasures you'll find, epic battles and what kind of island you'll find until it settles and a story forms in your head. All the while, your ship gently glides across the glistening mid morning sea, just as eager as you to see what comes next.<</nobr>>
+
+<<link [[Find New Target|Find Target]]>><</link>>
+<<if $pirateoutpost is 1>>[[Go To The Pirate Outpost|Pirate Outpost: Docks]]
+<</if>>
+<</widget>>
+
+
+<<widget "VillageEncounter">>
+You're sitting in your cabin, looking at sea charts, planning your next raid as your ship glides through the calm mid afternoon sea when you hear "Land ho!". Everything you had been thinking was immediately shoved to the back of your mind when you heard this as your focus became on the island. Excitement and anticipation filled you as you get up to take a look at the island. It's a medium sized forest island with a small fishing village right on the edge.
+
+<<print either("[[Raid Village|Village Encounter]]","[[Raid Village|Village Encounter: Bounty Hunter]]")>>
+<<link [[Find New Target|Find Target]]>><</link>>
+<<if $pirateoutpost is 1>>[[Go To The Pirate Outpost|Pirate Outpost: Docks]]
+<</if>>
+<</widget>>
+
+
+<<widget "TownEncounter">>
+You're sitting in your cabin, drinking some rum and counting yer gold while your ship glides through the calm early evening sea when you hear "Land ho!". Immediately, excitement and anticipation wells within you and all you can think about is this raid. You put your money away and head out onto the deck with your cup of rum to take a look at what you're heading to. What comes into sight is a large grasslands island with a small town by the sea side.
+
+<<print either("[[Raid Town|Town Encounter]]","[[Raid Town|Town Encounter: Guards]]")>>
+<<link [[Find New Target|Find Target]]>><</link>>
+<<if $pirateoutpost is 1>>[[Go To The Pirate Outpost|Pirate Outpost: Docks]]
+<</if>>
+<</widget>>
+
+
+<<widget "CityEncounter">>
+You're quietly sitting in your cabin, eating an assortment of fruits and meats as your ship glides through the calm, early morning sea when you hear "Land ho!". The moment you heard these words, no the moment you heard land, excitement and anticipation swelled within your as your mind became consumed by this upcoming raid. But for a moment, your mind returns to the here and now and you remember your food is only half eaten. You consider what to do for a moment and decide to leave it until you return and head onto the main deck. What you see there is a large desert island with a large city right on the edge.
+
+[[Raid City|City Encounter: Guards]]
+<<link [[Find New Target|Find Target]]>><</link>>
+<<if $pitateoutpost is 1>>[[Go To The Pirate Outpost|Pirate Outpost: Docks]]<</if>>
+<</widget>>
+
+
+<<widget "MerchantShipEncounter">>
+You're in your cabin, drinking some wine and counting your money as your ship pushes through evening waves that gradually are becoming stronger and stronger when you hear, Ship! You put away your money and head out onto the deck with your cup of wine to take a look at what it is. What comes into sight is a small ship you recognize as being a Bilander, a merchant ship with two masts, the mainmast being triangular while the secondary is trapezoidal. You're surprised to see it, it's a very old design and not the most efficient. You shrug and guess that the merchant wasn't able to afford anything better. But before you can issue orders your eyes shift to the sky as you walk to the bow. A storm is coming. Your eyes return to the bilander but off in your left peripheral view, you swore you saw a beaten up old though when you turned to get a proper look, it it was just open sea.
+
+[[Attack Merchant Ship|Merchant Ship Encounter: Guards]]
+<<link [[Find New Target|Find Target]]>><</link>>
+<<if $pirateoutpost is 1>>[[Go To The Pirate Outpost|Pirate Outpost: Docks]]
+<</if>>
+<</widget>>
+
+
+<<widget "Sailing2">>
+   <<print either("<<VillageEncounter>>","<<TownEncounter>>",
+   "<<CityEncounter>>","<<MerchantShipEncounter>>")>>
+<</widget>>
